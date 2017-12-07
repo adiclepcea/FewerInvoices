@@ -1,0 +1,32 @@
+﻿<Window x:Class="FewerInvoices.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FewerInvoices"
+        mc:Ignorable="d"
+        Title="Mai putine facturi" Height="495.897" Width="623.039" ResizeMode="NoResize">
+    <Grid Margin="0,0,2,24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnAlege" Content="Alege ..." HorizontalAlignment="Left" Margin="519,13,0,0" VerticalAlignment="Top" Width="71" Click="btnAlege_Click" Height="20"/>
+        <TextBox x:Name="txtFisier" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="82,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="432"/>
+        <Label x:Name="label" Content="Fisier" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="67" Height="26"/>
+        <ListBox x:Name="lstSheets" HorizontalAlignment="Left" Height="149" Margin="10,69,0,0" VerticalAlignment="Top" Width="432" SelectionChanged="lstSheets_SelectionChanged"/>
+        <Label x:Name="lblSheets" Content="Sheets" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.963,0.247" Width="67" Height="26"/>
+        <Label x:Name="lblInvoiceColumn" Content="Coloana factura:" HorizontalAlignment="Left" Margin="447,64,0,0" VerticalAlignment="Top" Width="113" Height="26"/>
+        <ComboBox x:Name="cmbInvoice" HorizontalAlignment="Left" Margin="447,95,0,0" VerticalAlignment="Top" Width="143" Height="22"/>
+        <Label x:Name="lblItemColumn" Content="Coloana linie factura:" HorizontalAlignment="Left" Margin="447,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.256,-0.325" Width="133" Height="26"/>
+        <ComboBox x:Name="cmbItem" HorizontalAlignment="Left" Margin="447,153,0,0" VerticalAlignment="Top" Width="143" Height="22"/>
+        <ProgressBar x:Name="pgBar" HorizontalAlignment="Left" Height="18" Margin="10,399,0,0" VerticalAlignment="Top" Width="584"/>
+        <Button x:Name="btnStart" Content="Start" Margin="519,180,25,0" VerticalAlignment="Top" RenderTransformOrigin="0.796,0.417" Height="20" Click="btnStart_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="167" Margin="10,227,0,0" VerticalAlignment="Top" Width="580"/>
+        <StatusBar x:Name="statusBar" HorizontalAlignment="Left" Height="35" Margin="10,422,0,-14" VerticalAlignment="Top" Width="580">
+            <StatusBarItem x:Name="statusBarIt" Content="Mai putine facturi" Height="35" VerticalAlignment="Top"/>
+        </StatusBar>
+        <CheckBox x:Name="checkBox" Content="Titlu in primul rand" HorizontalAlignment="Left" Margin="447,203,0,0" VerticalAlignment="Top" Width="143"/>
+
+    </Grid>
+</Window>
