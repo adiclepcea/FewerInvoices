@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FewerInvoices"
         mc:Ignorable="d"
-        Title="Mai putine facturi" Height="495.897" Width="623.039" ResizeMode="NoResize">
+        Title="Mai putine facturi" Height="515.897" Width="623.039" ResizeMode="NoResize">
     <Grid Margin="0,0,2,24">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,10 +23,15 @@
         <ProgressBar x:Name="pgBar" HorizontalAlignment="Left" Height="18" Margin="10,399,0,0" VerticalAlignment="Top" Width="584"/>
         <Button x:Name="btnStart" Content="Start" Margin="519,180,25,0" VerticalAlignment="Top" RenderTransformOrigin="0.796,0.417" Height="20" Click="btnStart_Click"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="167" Margin="10,227,0,0" VerticalAlignment="Top" Width="580"/>
-        <StatusBar x:Name="statusBar" HorizontalAlignment="Left" Height="35" Margin="10,422,0,-14" VerticalAlignment="Top" Width="580">
-            <StatusBarItem x:Name="statusBarIt" Content="Mai putine facturi" Height="35" VerticalAlignment="Top"/>
+        <StatusBar x:Name="statusBar" HorizontalAlignment="Left" Height="35" Margin="10,422,0,-14" VerticalAlignment="Top" Width="537">
+            <StatusBarItem x:Name="statusBarIt" Content="Mai putine facturi" Height="35" VerticalAlignment="Top" Width="520"/>
         </StatusBar>
         <CheckBox x:Name="checkBox" Content="Titlu in primul rand" HorizontalAlignment="Left" Margin="447,203,0,0" VerticalAlignment="Top" Width="143"/>
+        <Button x:Name="btnHelp" HorizontalAlignment="Left" Margin="556,426,0,-14" VerticalAlignment="Top" Width="38" Height="31" Click="btnHelp_Click">
+            <StackPanel>
+                <Image Source="help.png" Stretch="Uniform" Height="25"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>

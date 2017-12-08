@@ -17,3 +17,4 @@ f:\code\FewerInvoices\FewerInvoices\obj\Release\FewerInvoices.Properties.Resourc
 f:\code\FewerInvoices\FewerInvoices\obj\Release\FewerInvoices.csproj.GenerateResource.Cache
 f:\code\FewerInvoices\FewerInvoices\obj\Release\FewerInvoices.exe
 f:\code\FewerInvoices\FewerInvoices\obj\Release\FewerInvoices.pdb
+f:\code\FewerInvoices\FewerInvoices\obj\Release\Dictionary1.baml

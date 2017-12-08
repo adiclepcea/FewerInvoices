@@ -18,3 +18,4 @@ f:\code\FewerInvoices\FewerInvoices\obj\Debug\FewerInvoices.Properties.Resources
 f:\code\FewerInvoices\FewerInvoices\obj\Debug\FewerInvoices.csproj.GenerateResource.Cache
 f:\code\FewerInvoices\FewerInvoices\obj\Debug\FewerInvoices.exe
 f:\code\FewerInvoices\FewerInvoices\obj\Debug\FewerInvoices.pdb
+f:\code\FewerInvoices\FewerInvoices\obj\Debug\Dictionary1.baml

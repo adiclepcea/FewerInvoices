@@ -310,7 +310,7 @@ namespace FewerInvoices
 
                 fs.Close();
 
-                MessageBox.Show("Gata");
+                MessageBox.Show("Gata","Info",MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
@@ -462,5 +462,12 @@ namespace FewerInvoices
                 }).Start();
         }
 
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Fewer Invoices. Progam pentru selectarea numarului minim de facturi \r\n care sa cuprinda toate itemurile cel putin o data.\r\n"+
+                "\r\n"+
+                "Create de Adrian Roland Clepcea. Pentru Hanes Brands.\r\n"+
+                "Hanes Brands detine drepturile de autor!","Despre", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

@@ -13,11 +13,23 @@ namespace FewerInvoices
 
             List<Invoice> lstFactFinale = new List<Invoice>();
 
+            List<Item> lstUniqItems = Items.Where((it) => it.Invoices.Count == 1).ToList();
+
+            foreach(Item item in lstUniqItems)
+            {
+                foreach (Item it in item.Invoices.ElementAt(0).GetUnvisitedItems()) 
+                {
+                    it.Visited = true;                    
+                }
+                lstFactFinale.Add(item.Invoices.ElementAt(0));
+            }
+
             while (Items.Find((it) => !it.Visited) != null)
             {
                 Invoices.Sort();
                 Invoices.Reverse();
-                Invoice inv = Invoices.ElementAt(0);
+
+                Invoice inv = Invoices.ElementAt(0);                
 
                 foreach (Item it in inv.GetUnvisitedItems())
                 {
