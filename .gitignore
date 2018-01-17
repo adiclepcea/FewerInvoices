@@ -1,3 +1,5 @@
 *.exe
 *.dll
 *.zip
+FewerInvoices/bin
+FewerInvoices/obj

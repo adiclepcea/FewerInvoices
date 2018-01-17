@@ -289,6 +289,15 @@ namespace FewerInvoices
 
             int iRowFacturi = 0;
             int iRowItems = 0;
+
+            foreach(Invoice inv in lst)
+            {
+                foreach(Item item in inv.Items)
+                {
+                    item.Visited = false;
+                }
+            }
+
             foreach (Invoice inv in lst)
             {
                 IRow rFacturi = shFacturi.CreateRow(iRowFacturi++);
@@ -296,9 +305,14 @@ namespace FewerInvoices
 
                 foreach (Item item in inv.Items)
                 {
-                    IRow rItems = shItems.CreateRow(iRowItems++);
-                    rItems.CreateCell(0).SetCellValue(inv.Name);
-                    rItems.CreateCell(1).SetCellValue(item.Name);    
+                    if (!item.Visited)
+                    {
+                        IRow rItems = shItems.CreateRow(iRowItems++);
+                        rItems.CreateCell(0).SetCellValue(inv.Name);
+                        rItems.CreateCell(1).SetCellValue(item.Name);
+                        item.Visited = true;
+                    }
+
                 }
             }
 
@@ -363,17 +377,19 @@ namespace FewerInvoices
                     int firstRow = firstRow = sheet.FirstRowNum;
                     int maxPgBar = sheet.LastRowNum - sheet.FirstRowNum;
                     
-                    App.Current.Dispatcher.Invoke(delegate
-                    {
-                        pgBar.Value = 0;
-                        pgBar.Minimum = 0;
-                        if (checkBox.IsChecked.HasValue && checkBox.IsChecked.Value)
+                    App.Current.Dispatcher.Invoke(
+                        delegate
                         {
-                            firstRow++;
-                            maxPgBar--;
+                            pgBar.Value = 0;
+                            pgBar.Minimum = 0;
+                            if (checkBox.IsChecked.HasValue && checkBox.IsChecked.Value)
+                            {
+                                firstRow++;
+                                maxPgBar--;
+                            }
+                            pgBar.Maximum = maxPgBar;
                         }
-                        pgBar.Maximum = maxPgBar;
-                    });
+                    );
 
                     int iRow = firstRow;
                     List<Item> lstItems = new List<Item>();

@@ -15,13 +15,16 @@ namespace FewerInvoices
 
             List<Item> lstUniqItems = Items.Where((it) => it.Invoices.Count == 1).ToList();
 
-            foreach(Item item in lstUniqItems)
-            {
-                foreach (Item it in item.Invoices.ElementAt(0).GetUnvisitedItems()) 
+            foreach (Item item in lstUniqItems)
+            {                
+                foreach (Item it in item.Invoices.ElementAt(0).GetUnvisitedItems())
                 {
-                    it.Visited = true;                    
+                    it.Visited = true;
                 }
-                lstFactFinale.Add(item.Invoices.ElementAt(0));
+                if (!lstFactFinale.Contains(item.Invoices.ElementAt(0)))
+                {
+                    lstFactFinale.Add(item.Invoices.ElementAt(0));
+                }
             }
 
             while (Items.Find((it) => !it.Visited) != null)
