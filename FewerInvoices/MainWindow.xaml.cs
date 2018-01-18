@@ -397,6 +397,12 @@ namespace FewerInvoices
 
                     while (iRow <= sheet.LastRowNum)
                     {
+                        //avoid trying to read an inexistent cell
+                        if (sheet.GetRow(iRow).Count() < itemIndex + 1 || sheet.GetRow(iRow).Count() < invoiceIndex + 1)
+                        {
+                            iRow++;
+                            continue;
+                        }
 
                         Item item = new Item(GetCellValue(sheet.GetRow(iRow).Cells[itemIndex]));
                         Invoice invoice = new Invoice(GetCellValue(sheet.GetRow(iRow).Cells[invoiceIndex]));
@@ -483,7 +489,7 @@ namespace FewerInvoices
             MessageBox.Show("Fewer Invoices. Progam pentru selectarea numarului minim de facturi \r\n care sa cuprinda toate itemurile cel putin o data.\r\n"+
                 "\r\n"+
                 "Create de Adrian Roland Clepcea. Pentru Hanes Brands.\r\n"+
-                "Hanes Brands detine drepturile de autor!","Despre", MessageBoxButton.OK, MessageBoxImage.Information);
+                "Hanes Brands detine drepturile de autor!\r\nv0.5","Despre", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
